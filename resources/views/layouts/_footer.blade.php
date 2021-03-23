@@ -8,4 +8,3 @@
     <a href="/about" >关于</a>
   </div>
 </footer>
-git add -A

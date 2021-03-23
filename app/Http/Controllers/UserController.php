@@ -18,5 +18,10 @@ class UserController extends Controller
         return view('user.show',compact('user'));
     }
 
+    public function store()
+    {
+
+    }
+
 
 }

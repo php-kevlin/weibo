@@ -2,15 +2,15 @@
   <div class="container ">
     <a class="navbar-brand" href="{{ route('home') }}">Weibo App</a>
     <ul class="navbar-nav justify-content-end">
-      @if (Auth::check())
+      @if (\Illuminate\Support\Facades\Auth::check())
         <li class="nav-item"><a class="nav-link" href="#">用户列表</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ Auth::user()->name }}
+            {{ \Illuminate\Support\Facades\Auth::user()->name }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ route('user.show', Auth::user()) }}">个人中心</a>
-            <a class="dropdown-item" href="#">编辑资料</a>
+            <a class="dropdown-item" href="{{ route('user.show', \Illuminate\Support\Facades\Auth::user()) }}">个人中心</a>
+            <a class="dropdown-item" href="{{route('user.edit',\Illuminate\Support\Facades\Auth::user())}}">编辑资料</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" id="logout" href="#">
               <form action="{{ route('logout') }}" method="POST">

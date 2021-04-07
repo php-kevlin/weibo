@@ -9,6 +9,7 @@ class StaticPagesController extends Controller
     //
     public function home()
     {
+//        echo "hello";die();
         return view('static_pages/home');
     }
 

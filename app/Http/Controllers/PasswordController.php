@@ -11,6 +11,16 @@ use Illuminate\Support\Str;
 
 class PasswordController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('throttle:2,1',[
+           'only' => ['sendResetLinkEmail']
+        ]);
+    }
+
+
+
     public function showLinkRequestForm()
     {
         return view('auth.passwords.email');

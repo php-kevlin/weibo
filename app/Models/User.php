@@ -57,4 +57,10 @@ class User extends Authenticatable
             $user->activation_token = Str::random(10);
         });
     }
+
+    //由于一个用户有多条微博,因此在用户模型中使用微博动态的复数形式statuses来作为定义的函数名
+    public function statuses()
+    {
+        return $this->hasMany(Status::class);
+    }
 }
